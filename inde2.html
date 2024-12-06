@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Files</title>
+</head>
+<body>
+<h1>MP3 Files</h1>
+<div id="file-list"></div>
+
+<script>
+  // Fetch the list of files from the server
+  fetch('/files')
+          .then(response => response.json())
+          .then(files => {
+            const fileListDiv = document.getElementById('file-list');
+            files.forEach(file => {
+              // Create a container for each MP3 file
+              const fileContainer = document.createElement('div');
+              fileContainer.textContent = file;
+              // Create an audio element
+              const audioElement = document.createElement('audio');
+              audioElement.controls = true;
+              audioElement.src = `/${file}`; // Assuming files are served statically
+
+              // Append to the container
+              fileContainer.appendChild(audioElement);
+              fileListDiv.appendChild(fileContainer);
+            });
+          })
+          .catch(err => console.error('Error fetching files:', err));
+</script>
+</body>
+</html>
