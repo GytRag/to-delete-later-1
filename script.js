@@ -19,7 +19,15 @@ playButton.forEach((button, index) => {
         nowPlayingAudio.innerHTML = `Audio ${index + 1}<audio> <source src="/audio/${audioArr[index]}"></audio>`;
         const audio = document.querySelector("audio");
         audio.play();
-        console.log(`Audio ${index + 1}`);
+        function audioEnd() {
+            if (!audio.ended) {
+                setTimeout(audioEnd, 1000);
+            }
+            else {
+                nowPlayingAudio.innerHTML = 'no song';
+            }
+        }
+        audioEnd();
     });
 });
 videoArr.map((item, index) => {
@@ -39,5 +47,14 @@ playVideo.forEach((button, index) => {
         </div> `;
         const video = document.querySelector("video");
         video.play();
+        function videoEnd() {
+            if (!video.ended) {
+                setTimeout(videoEnd, 2000);
+            }
+            else {
+                nowPlayingVideo.innerHTML = 'Video playing';
+            }
+        }
+        videoEnd();
     });
 });

@@ -21,4 +21,7 @@ body {
 .nowPlayingVideo {
     width: 200px;
     height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
