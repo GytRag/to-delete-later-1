@@ -57,7 +57,8 @@ const nowPlayingVideo = document.querySelector('.nowPlayingVideo') as HTMLElemen
 
 playVideo.forEach((button, index) => {
     button.addEventListener("click", () => {
-        nowPlayingVideo.innerHTML = `<div class="video">
+        nowPlayingVideo.innerHTML = `
+        <div>
             <video> <source src="/video/${videoArr[index]}"> </video>
         </div> `;
         const video = document.querySelector("video") as HTMLVideoElement;

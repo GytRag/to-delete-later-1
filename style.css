@@ -1,5 +1,6 @@
-.video video{
+video{
     width: 200px;
+    margin-left: 10px;
 }
 
 body {

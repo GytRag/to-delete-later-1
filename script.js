@@ -42,7 +42,8 @@ const playVideo = document.querySelectorAll(".video button");
 const nowPlayingVideo = document.querySelector('.nowPlayingVideo');
 playVideo.forEach((button, index) => {
     button.addEventListener("click", () => {
-        nowPlayingVideo.innerHTML = `<div class="video">
+        nowPlayingVideo.innerHTML = `
+        <div>
             <video> <source src="/video/${videoArr[index]}"> </video>
         </div> `;
         const video = document.querySelector("video");
@@ -52,7 +53,7 @@ playVideo.forEach((button, index) => {
                 setTimeout(videoEnd, 2000);
             }
             else {
-                nowPlayingVideo.innerHTML = 'Video playing';
+                nowPlayingVideo.innerHTML = 'Video player';
             }
         }
         videoEnd();
