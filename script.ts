@@ -66,7 +66,7 @@ playVideo.forEach((button, index) => {
             if(!video.ended){
                 setTimeout(videoEnd, 2000)
             }else {
-                nowPlayingVideo.innerHTML = 'Video playing';
+                nowPlayingVideo.innerHTML = 'Video player';
             }
         }
         videoEnd()
